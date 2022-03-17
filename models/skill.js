@@ -15,7 +15,21 @@ const getOne = (id) => {
     return skills.find(skill => skill.id === id);
 };
 
+const create = (skill) => {
+    skill.id = (skills.length + 1);
+    skill.duration = '0 weeks';
+    skills.push(skill);
+};
+
+const deleteOne = (id) => {
+    id = parseInt(id);
+    const idx = skills.findIndex(skill => skill.id === id);
+    skills.splice(idx, 1);
+}
+
 module.exports = {
     getAll,
-    getOne
+    getOne,
+    create,
+    deleteOne
 };

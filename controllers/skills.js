@@ -12,7 +12,24 @@ show = (req, res) => {
     });
 };
 
+newSkill = (req, res) => {
+    res.render('skills/new');
+};
+
+create = (req, res) => {
+    Skill.create(req.body);
+    res.redirect('/skills');
+};
+
+deleteSkill = (req, res) => {
+    Skill.deleteOne(req.params.id);
+    res.redirect('/skills');
+};
+
 module.exports = {
     index, 
-    show
+    show,
+    new: newSkill,
+    create,
+    delete: deleteSkill
 };
