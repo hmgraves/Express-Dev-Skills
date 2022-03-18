@@ -33,8 +33,10 @@ edit = (req, res) => {
 };
 
 update = (req, res) => {
-    res.redirect('/skills/show');
     Skill.update(req.params.id, req.body);
+    res.render('skills/show', {
+        skill: Skill.getOne(req.params.id)
+    });
 };
 
 module.exports = {
