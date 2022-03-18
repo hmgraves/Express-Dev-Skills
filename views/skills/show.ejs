@@ -10,10 +10,15 @@
 <body>
     <form action="/skills/<%= skill.id %>?_method=DELETE"
         class="delete-form" method="POST">
-        <button type="submit">X</button>
+        <button type="submit">Delete skill</button>
     </form>
     <h3><%= skill.skill %></h3>
     <h3>Duration: <%= skill.duration %> </h3>
-    <a href="/skills">Back</a>
+    <p>
+        <a href="/skills/<%= skill.id %>/edit ">Edit skill</a>
+    </p>
+    <p>
+        <a href="/skills">Back to skills</a>
+    </p>
 </body>
 </html>
